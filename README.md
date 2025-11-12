@@ -83,7 +83,7 @@ ai-bi-sentiment-powerbi-es/
 
 **Rafael Miguel Dorville Collado**  
 Cloud & Data Solutions Engineer | AI & BI Instructor  
-[LinkedIn](https://www.linkedin.com/in/rafaeldorville) • [GitHub](https://github.com/rafaeldorville)  
+[LinkedIn](https://www.linkedin.com/in/rmdorville) • [GitHub](https://github.com/mrdorville)  
 
 ## License
 
