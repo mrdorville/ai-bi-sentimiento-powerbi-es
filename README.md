@@ -17,18 +17,14 @@ CSV Dataset (Spanish reviews) → Power BI Desktop → Power Query (M Function: 
 ## Repository Structure
 
 ai-bi-sentiment-powerbi-es/
-│
-├─ data/
-│ └─ resenas_es_600_ascii.csv
-│
-├─ scripts/
-│ └─ fxSentiment_anonimo.txt
-│
-├─ docs/
-│ └─ presentation_barcamp2025.pdf
-│
-├─ .gitignore
-└─ README.md
+├── data/
+│ └── resenas_es_600_ascii.csv
+├── scripts/
+│ └── fxSentiment_anonimo.txt
+├── docs/
+│ └── presentation_barcamp2025.pdf
+├── .gitignore
+└── README.md
 
 ## Requirements
 
