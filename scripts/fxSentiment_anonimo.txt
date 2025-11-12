@@ -1,0 +1,43 @@
+/*
+    fxSentiment (Power Query M Function)
+    ------------------------------------
+    Esta función analiza el sentimiento de un texto en español
+    utilizando el servicio de Azure Text Analytics (versión 3.1).
+
+    ⚠️ NOTA IMPORTANTE:
+    - Reemplaza las variables "EndpointTextAnalytics" y "ApiKeyTextAnalytics"
+      con tus propios valores de Azure Cognitive Services.
+    - No compartas tu clave ni endpoint públicamente.
+*/
+
+(text) =>
+let
+    // Construcción del endpoint y cuerpo de la solicitud
+    endpoint = EndpointTextAnalytics & "/text/analytics/v3.1/sentiment",
+    body = "{ ""documents"": [ { ""id"": ""1"", ""language"": ""es"", ""text"": """ &
+            Text.Replace(text, """", "\""") & """ } ] }",
+
+    // Llamada a la API de Azure Text Analytics
+    Source = Json.Document(
+        Web.Contents(
+            endpoint,
+            [
+                Headers = [
+                    #"Ocp-Apim-Subscription-Key" = ApiKeyTextAnalytics,
+                    #"Content-Type" = "application/json"
+                ],
+                Content = Text.ToBinary(body)
+            ]
+        )
+    ),
+
+    // Extracción de resultados
+    doc = Source[documents]{0},
+    result = [
+        sentiment = doc[sentiment],
+        positive = doc[confidenceScores][positive],
+        neutral  = doc[confidenceScores][neutral],
+        negative = doc[confidenceScores][negative]
+    ]
+in
+    result
