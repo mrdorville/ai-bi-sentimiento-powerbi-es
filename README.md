@@ -14,8 +14,8 @@ Using **Azure AI’s Text Analytics API**, Power BI connects directly to the ser
 
 CSV Dataset (Spanish reviews) → Power BI Desktop → Power Query (M Function: fxSentiment) → Azure AI Language – Text Analytics API → Sentiment Scores & Confidence → DAX Measures & Visuals
 
-## Repository Structure
-
+```
+Repository Structure
 ai-bi-sentiment-powerbi-es/
 ├── data/
 │   └── resenas_es_500_ascii.csv
@@ -25,6 +25,8 @@ ai-bi-sentiment-powerbi-es/
 │   └── presentation_barcamp2025.pdf
 ├── .gitignore
 └── README.md
+```
+
 
 
 ## Requirements
