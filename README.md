@@ -24,7 +24,7 @@ ai-bi-sentiment-powerbi-es/
 ├── docs/
 │   └── Barcamp_RD_2025_AI_PowerBI_Rafael_Dorville.pdf
 │   └── EJEMPLOS_MEDIDAS_DAX.TXT
-│   └── 
+│   └── GUIA_DEMO_AI_POWERBI.txt
 ├── .gitignore
 └── README.md
 ```
