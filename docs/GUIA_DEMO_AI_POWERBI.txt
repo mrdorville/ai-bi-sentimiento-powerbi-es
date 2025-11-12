@@ -1,0 +1,20 @@
+
+GUIA RAPIDA DEMO – Power BI + Azure AI
+
+1) Abrir Power BI Desktop y cargar el CSV: dataset_resenas_es.csv
+2) En Power Query, crear PARAMETROS:
+   - EndpointTextAnalytics (Texto)
+   - ApiKeyTextAnalytics (Texto)
+3) Crear las funciones:
+   - fxGetSentiment (copiar/pegar el bloque M correspondiente)
+4) Aplicar fxGetSentiment a la columna [comentario], expandir 'sentiment' y 'confidenceScores'.
+5) Crear medidas DAX simples:
+   - Reseñas = COUNTROWS('resenas')
+   - Positivas % = DIVIDE(CALCULATE(COUNTROWS('resenas'), 'resenas'[sentiment] = "positive"), [Reseñas])
+   - Negativas % = DIVIDE(CALCULATE(COUNTROWS('resenas'), 'resenas'[sentiment] = "negative"), [Reseñas])
+   - Sentimiento Promedio = AVERAGE('resenas'[positive]) - AVERAGE('resenas'[negative])
+6) Visuales recomendados:
+   - Barras por sentimiento y canal
+   - Linea de tendencia por fecha (score promedio)
+   - Tarjetas KPI (% positivas, negativas, total)
+7) Backup: guardar una version con resultados ya calculados por si el endpoint falla durante la charla.
