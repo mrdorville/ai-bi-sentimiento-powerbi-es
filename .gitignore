@@ -1,0 +1,12 @@
+# Power BI files
+*.pbix
+*.pbit
+
+# Credentials or API keys
+*.key
+*.env
+*.json
+
+# OS / IDE
+.DS_Store
+.vscode/
