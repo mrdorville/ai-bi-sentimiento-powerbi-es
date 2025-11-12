@@ -12,7 +12,7 @@ GUIA RAPIDA DEMO – Power BI + Azure AI
    - Copiar y pegar el bloque M desde scripts/fxSentiment_anonimo.txt
 
 4) APLICAR fxSentiment A LA COLUMNA [comentario]
-   - Invocar la función fxSentiment sobre la columna de texto
+   - Invocar la función fxSentiment sobre la columna de texto.
    - Expandir los campos:
        • sentiment
        • confidenceScores.positive
@@ -20,29 +20,61 @@ GUIA RAPIDA DEMO – Power BI + Azure AI
        • confidenceScores.negative
 
 5) CREAR MEDIDAS DAX PRINCIPALES
-   - Reseñas =
+   - TotalResenas =
        COUNTROWS('resenas')
 
-   - Positivas % =
-       DIVIDE(
-           CALCULATE(COUNTROWS('resenas'), 'resenas'[sentiment] = "positive"),
-           [Reseñas]
+   - TotalPositivas =
+       CALCULATE(
+           COUNTROWS('resenas'),
+           'resenas'[sentiment] = "positive"
        )
 
-   - Negativas % =
-       DIVIDE(
-           CALCULATE(COUNTROWS('resenas'), 'resenas'[sentiment] = "negative"),
-           [Reseñas]
+   - TotalNegativas =
+       CALCULATE(
+           COUNTROWS('resenas'),
+           'resenas'[sentiment] = "negative"
        )
 
-   - Sentimiento Promedio =
-       AVERAGE('resenas'[positive]) - AVERAGE('resenas'[negative])
+   - TotalNeutrales =
+       CALCULATE(
+           COUNTROWS('resenas'),
+           'resenas'[sentiment] = "neutral"
+       )
+
+   - PorcPositivas =
+       DIVIDE([TotalPositivas], [TotalResenas])
+
+   - PorcNegativas =
+       DIVIDE([TotalNegativas], [TotalResenas])
+
+   - PorcNeutrales =
+       DIVIDE([TotalNeutrales], [TotalResenas])
+
+   - AvgPositiveScore =
+       AVERAGE('resenas'[positive])
+
+   - AvgNeutralScore =
+       AVERAGE('resenas'[neutral])
+
+   - AvgNegativeScore =
+       AVERAGE('resenas'[negative])
+
+   - SentimentScore =
+       [AvgPositiveScore] - [AvgNegativeScore]
+
+   - Resumen =
+       "Positivas: " & FORMAT([PorcPositivas], "0.0%") &
+       " | Neutrales: " & FORMAT([PorcNeutrales], "0.0%") &
+       " | Negativas: " & FORMAT([PorcNegativas], "0.0%")
+
+   - Criticidad (columna calculada) =
+       IF(
+           'resenas'[sentiment] = "negative", "Alta",
+           IF('resenas'[sentiment] = "neutral", "Media", "Baja")
+       )
 
 6) VISUALES RECOMENDADOS
    - Gráfico de barras por tipo de sentimiento y canal
    - Línea de tendencia por fecha (score promedio)
    - Tarjetas KPI con % positivas, % negativas y total de reseñas
-
-7) BACKUP (RECOMENDADO)
-   - Guardar una versión del PBIX con los resultados ya calculados
-     por si el endpoint de Azure AI falla durante la presentación.
+   - Matriz o tabla de criticidad por categoría o canal
