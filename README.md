@@ -77,9 +77,11 @@ ai-bi-sentiment-powerbi-es/
 
 ## Resources
 
-- Dataset: `/data/resenas_es_500_ascii.csv`  
-- Power Query Script: `/scripts/fxSentiment_anonimo.txt`  
-- Presentation: `/docs/Barcamp_RD_2025_AI_PowerBI_Rafael_Dorville.pdf`  
+- Dataset: [data/resenas_es_500_ascii.csv](data/resenas_es_500_ascii.csv)  
+- Power Query script: [scripts/fxSentiment_anonimo.txt](scripts/fxSentiment_anonimo.txt)  
+- Demo guide: [docs/GUIA_DEMO_AI_POWERBI.txt](docs/GUIA_DEMO_AI_POWERBI.txt)  
+- DAX measures: [docs/EJEMPLOS_MEDIDAS_DAX.txt](docs/EJEMPLOS_MEDIDAS_DAX.txt)  
+- Presentation: [docs/presentation_barcamp2025.pdf](docs/presentation_barcamp2025.pdf)
 
 ## Author
 
@@ -90,7 +92,3 @@ Cloud & Data Solutions Engineer | AI & BI Instructor
 ## License
 
 This project is licensed under the **MIT License** – see the LICENSE file for details.
-
-- Demo guide: [docs/GUIA_DEMO_AI_POWERBI.txt](docs/GUIA_DEMO_AI_POWERBI.txt)  
-- DAX measures: [docs/EJEMPLOS_MEDIDAS_DAX.txt](docs/EJEMPLOS_MEDIDAS_DAX.txt)
-
