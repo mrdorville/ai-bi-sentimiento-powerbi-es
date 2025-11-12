@@ -1,0 +1,54 @@
+EJEMPLOS DE MEDIDAS DAX – DEMO Power BI + Azure AI
+
+1) TotalResenas =
+   COUNTROWS('resenas')
+
+2) TotalPositivas =
+   CALCULATE(
+       COUNTROWS('resenas'),
+       'resenas'[sentiment] = "positive"
+   )
+
+3) TotalNegativas =
+   CALCULATE(
+       COUNTROWS('resenas'),
+       'resenas'[sentiment] = "negative"
+   )
+
+4) TotalNeutrales =
+   CALCULATE(
+       COUNTROWS('resenas'),
+       'resenas'[sentiment] = "neutral"
+   )
+
+5) PorcPositivas =
+   DIVIDE([TotalPositivas], [TotalResenas])
+
+6) PorcNegativas =
+   DIVIDE([TotalNegativas], [TotalResenas])
+
+7) PorcNeutrales =
+   DIVIDE([TotalNeutrales], [TotalResenas])
+
+8) AvgPositiveScore =
+   AVERAGE('resenas'[positive])
+
+9) AvgNeutralScore =
+   AVERAGE('resenas'[neutral])
+
+10) AvgNegativeScore =
+    AVERAGE('resenas'[negative])
+
+11) SentimentScore =
+    [AvgPositiveScore] - [AvgNegativeScore]
+
+12) Resumen =
+    "Positivas: " & FORMAT([PorcPositivas], "0.0%") &
+    " | Neutrales: " & FORMAT([PorcNeutrales], "0.0%") &
+    " | Negativas: " & FORMAT([PorcNegativas], "0.0%")
+
+13) Criticidad (columna calculada) =
+    IF(
+        'resenas'[sentiment] = "negative", "Alta",
+        IF('resenas'[sentiment] = "neutral", "Media", "Baja")
+    )
