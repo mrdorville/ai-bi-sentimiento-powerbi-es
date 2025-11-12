@@ -14,8 +14,8 @@ Using **Azure AI’s Text Analytics API**, Power BI connects directly to the ser
 
 CSV Dataset (Spanish reviews) → Power BI Desktop → Power Query (M Function: fxSentiment) → Azure AI Language – Text Analytics API → Sentiment Scores & Confidence → DAX Measures & Visuals
 
+## Repository Structure
 ```
-Repository Structure
 ai-bi-sentiment-powerbi-es/
 ├── data/
 │   └── resenas_es_500_ascii.csv
@@ -37,18 +37,25 @@ ai-bi-sentiment-powerbi-es/
 - Basic understanding of **Power Query (M)** and **DAX**
 
 ## Quick Start
+```
+1. Download or clone this repository:
+   git clone https://github.com/rafaeldorville/ai-bi-sentimiento-powerbi-es.git
 
-1: Download or clone this repository:
-     command: git clone https://github.com/rafaeldorville/ai-bi-sentimiento-powerbi-es.git
-  2: Open Power BI Desktop.
-  3: Load the CSV file from data/resenas_es_600_ascii.csv.
-  4:
-    Create two parameters in Power BI:
-      - EndpointTextAnalytics → your Azure Text Analytics endpoint
-      - ApiKeyTextAnalytics → your subscription key
-  5: Import the M script from /scripts/fxSentiment_anonimo.txt into Power Query.
-  6: Invoke the function fxSentiment over your text column to obtain sentiment and confidence scores.
-  7: Visualize results using DAX measures and Power BI visuals.
+2. Open Power BI Desktop.
+
+3. Load the CSV file from data/resenas_es_500_ascii.csv.
+
+4. Create two parameters in Power BI:
+   - EndpointTextAnalytics → your Azure Text Analytics endpoint
+   - ApiKeyTextAnalytics → your subscription key
+
+5. Import the M script from /scripts/fxSentiment_anonimo.txt into Power Query.
+
+6. Invoke the function fxSentiment over your text column to obtain sentiment and confidence scores.
+
+7. Visualize results using DAX measures and Power BI visuals.
+```
+
 
 ## Example Insights
 
