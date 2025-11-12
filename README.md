@@ -22,7 +22,9 @@ ai-bi-sentiment-powerbi-es/
 ├── scripts/
 │   └── fxSentiment_anonimo.txt
 ├── docs/
-│   └── presentation_barcamp2025.pdf
+│   └── Barcamp_RD_2025_AI_PowerBI_Rafael_Dorville.pdf
+│   └── EJEMPLOS_MEDIDAS_DAX.TXT
+│   └── 
 ├── .gitignore
 └── README.md
 ```
