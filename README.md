@@ -81,7 +81,8 @@ ai-bi-sentiment-powerbi-es/
 - Power Query script: [scripts/fxSentiment_anonimo.txt](scripts/fxSentiment_anonimo.txt)  
 - Demo guide: [docs/GUIA_DEMO_AI_POWERBI.txt](docs/GUIA_DEMO_AI_POWERBI.txt)  
 - DAX measures: [docs/EJEMPLOS_MEDIDAS_DAX.txt](docs/EJEMPLOS_MEDIDAS_DAX.txt)  
-- Presentation: [docs/presentation_barcamp2025.pdf](docs/presentation_barcamp2025.pdf)
+- Presentation: [docs/Barcamp_RD_2025_AI_PowerBI_Rafael_Dorville.pdf](docs/Barcamp_RD_2025_AI_PowerBI_Rafael_Dorville.pdf)
+
 
 ## Author
 
