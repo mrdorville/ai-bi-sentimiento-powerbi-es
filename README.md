@@ -40,19 +40,13 @@ ai-bi-sentiment-powerbi-es/
 ```
 1. Download or clone this repository:
    git clone https://github.com/rafaeldorville/ai-bi-sentimiento-powerbi-es.git
-
 2. Open Power BI Desktop.
-
 3. Load the CSV file from data/resenas_es_500_ascii.csv.
-
 4. Create two parameters in Power BI:
    - EndpointTextAnalytics → your Azure Text Analytics endpoint
    - ApiKeyTextAnalytics → your subscription key
-
 5. Import the M script from /scripts/fxSentiment_anonimo.txt into Power Query.
-
 6. Invoke the function fxSentiment over your text column to obtain sentiment and confidence scores.
-
 7. Visualize results using DAX measures and Power BI visuals.
 ```
 
