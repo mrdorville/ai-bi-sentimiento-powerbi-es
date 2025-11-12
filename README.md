@@ -77,7 +77,7 @@ ai-bi-sentiment-powerbi-es/
 
 - Dataset: `/data/resenas_es_500_ascii.csv`  
 - Power Query Script: `/scripts/fxSentiment_anonimo.txt`  
-- Presentation: `/docs/presentation_barcamp2025.pdf`  
+- Presentation: `/docs/Barcamp_RD_2025_AI_PowerBI_Rafael_Dorville.pdf`  
 
 ## Author
 
